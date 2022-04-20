@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427147, b: 0.56452364, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.56452405, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: ebff6f0d5c157544ba57f8803d3a3a7c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -151,8 +151,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1414857780}
   - {fileID: 1210388736}
+  - {fileID: 1414857780}
   m_Father: {fileID: 1637886809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileTag: Tile
+  onTileAreaExit: {r: 0.972549, g: 0.8392157, b: 0, a: 1}
 --- !u!1001 &264288631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -626,7 +627,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -849,6 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileTag: Tile
+  onTileAreaExit: {r: 0.972549, g: 0.8392157, b: 0, a: 1}
 --- !u!54 &874064442
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1107,7 +1109,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 37230223}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1210388737
 MonoBehaviour:
@@ -1168,6 +1170,9 @@ MonoBehaviour:
   tileLayerMask:
     serializedVersion: 2
     m_Bits: 1
+  moveTime: 0.45
+  punchTime: 0.035
+  normalScale: {x: 0.75, y: 0.75, z: 0.75}
 --- !u!1 &1343216676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 37230223}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1414857781
 MonoBehaviour:
@@ -1668,6 +1673,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3793279272211237827, guid: b4dc02cfb48be43228b3a7d61cef552c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: edb650cee848f2c4596f0d15ba2c6491, type: 2}
     - target: {fileID: 4207714054582741009, guid: b4dc02cfb48be43228b3a7d61cef552c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1678,7 +1687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4207714054582741009, guid: b4dc02cfb48be43228b3a7d61cef552c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 4207714054582741009, guid: b4dc02cfb48be43228b3a7d61cef552c, type: 3}
       propertyPath: m_LocalPosition.z

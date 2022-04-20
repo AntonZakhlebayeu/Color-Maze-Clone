@@ -16,6 +16,7 @@ public class PlayerInputSystem : GameSystem, IUpdating
         {
             firstPressPos = new Vector2(Input.mousePosition.x,Input.mousePosition.y);
         }
+        
         if(Input.GetMouseButtonUp(0))
         {
             secondPressPos = new Vector2(Input.mousePosition.x,Input.mousePosition.y);
