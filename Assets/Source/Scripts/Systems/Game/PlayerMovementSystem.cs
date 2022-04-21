@@ -42,13 +42,13 @@ public class PlayerMovementSystem : GameSystem, IIniting, IUpdating
                 else if (game.SwipeDirection == Vector3.forward)
                 {
                     correctedPoint = movePoint.collider.bounds.ClosestPoint(movePoint.point) + new Vector3(0, 0, -0.5f);
-                    dragPoint = correctedPoint + new Vector3(0f, 0f, 0.1f);
+                    dragPoint = correctedPoint + new Vector3(0f, 0f, -0.1f);
                     scalePoint = new Vector3(normalScale.x, normalScale.y, normalScale.z - 0.25f);
                 }
                 else
                 {
                     correctedPoint = movePoint.collider.bounds.ClosestPoint(movePoint.point) + new Vector3(0, 0, 0.5f);
-                    dragPoint = correctedPoint + new Vector3(0.1f, 0f, -0.1f);
+                    dragPoint = correctedPoint + new Vector3(0f, 0f, 0.1f);
                     scalePoint = new Vector3(normalScale.x, normalScale.y, normalScale.z - 0.25f);
                 }
                 
