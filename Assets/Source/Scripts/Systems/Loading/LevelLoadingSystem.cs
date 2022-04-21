@@ -6,14 +6,13 @@ public class LevelLoadingSystem : GameSystem, IIniting
 {
     [SerializeField] private string levelPath;
 
-    public static WinSignal winSignal;
+    private WinSignal winSignal;
 
     public void OnInit()
     {
-        var level = Resources.Load<GameObject>(string.Format(levelPath));
-
         Signals.Get<WinSignal>(out winSignal);
-        
+
+        var level = Resources.Load<GameObject>(string.Format(levelPath));
         game.currentLevel = Instantiate(level);
     }
 }

@@ -14,6 +14,7 @@ public class PlayerMovementSystem : GameSystem, IIniting, IUpdating
     private Vector3 correctedPoint;
     private Vector3 dragPoint;
     private Vector3 scalePoint;
+    private Sequence sequence;
 
     public void OnInit()
     {
@@ -50,24 +51,19 @@ public class PlayerMovementSystem : GameSystem, IIniting, IUpdating
                     dragPoint = correctedPoint + new Vector3(0.1f, 0f, -0.1f);
                     scalePoint = new Vector3(normalScale.x, normalScale.y, normalScale.z - 0.25f);
                 }
-
-                var sequence = DOTween.Sequence();
+                
+                sequence = DOTween.Sequence();
+                
                 sequence.Append(game.player.DOMove(correctedPoint, moveTime));
+                sequence.Join(game.player.DOScale(scalePoint, moveTime));
                 sequence.Append(game.player.DOMove(dragPoint, punchTime));
-                sequence.Append(game.player.DOScale(scalePoint, punchTime));
+                sequence.Join(game.player.DOScale(normalScale, punchTime));
                 sequence.Append(game.player.DOMove(correctedPoint, punchTime));
-                sequence.Append(game.player.DOScale(normalScale, punchTime));
 
                 DOTween.Play(sequence);
 
                 game.SwipeDirection = Vector3.zero;
             }
         }
-    }
-
-
-    private IEnumerable WaitForPunch(float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
     }
 }
